@@ -69,6 +69,38 @@ class Stand_model extends CI_Model {
         return $insert;
 	}
 	
+	function list_all_stands() {
+		
+		
+	}
+	
+	function get_stand($stand_id) {
+		//get stand details
+		$this->db->where('stand_location', $stand_id);
+		
+		$query = $this->db->get('stands');
+		 if ($query->num_rows > 0) {
+            return $query->result();
+        } 
+		
+		
+	
+		
+		
+	}
+	
+	function get_stand_wines($stand_id) {
+		
+		//get wines for $stand_id
+		$this->db->where('stand_id', $stand_id);
+		$query = $this->db->get('wines');
+		 if ($query->num_rows > 0) {
+            return $query->result();
+        } 
+		
+	}
+	
+	
 	function update_wine($productID, $productname, $description, $image)
 	{
 		$form_data = array(
@@ -81,6 +113,14 @@ class Stand_model extends CI_Model {
 		$this->db->where('product_ref', $productID);
 		$update = $this->db->update('wines', $form_data);
         return $update;
+	}
+	
+	function get_all_wines()
+	{
+		  $query = $this->db->get('wines');
+        if ($query->num_rows > 0) {
+            return $query->result();
+        }
 	}
 	
 	

@@ -35,9 +35,13 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 /* ~~ this fixed width container surrounds all other elements ~~ */
 .container {
+	position:relative;
 	width: 1080px;
 	height: 1920px;
-	background-color: #FFF;
+	background-image:url('assets/backfoot.png')  ;
+		background-repeat:no-repeat;
+		background-position:bottom center; 
+	background-color: #fff;
 	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
 }
 
@@ -65,4 +69,70 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	height:0;
 	font-size: 1px;
 	line-height: 0px;
+}
+
+	#standHeading {
+		width:926px;
+		height:121px;
+		background: #000;
+		color:#fff;
+		margin:20px auto;
+		text-align:center;
+	}
+	#wineContainer {
+		width:926px;
+		height:1168px;
+		background:#fff;
+		margin:20px auto;
+	}
+	#wineHeading {
+		width:926px;
+		height:121px;
+		background: #fff;
+		color:#000;
+		margin:20px auto;
+		text-align:center;
+	}
+	
+	.popupBack {
+		background-color: rgba(181, 119, 165, 0.6);
+background: rgba(181, 119, 165, 0.6);
+
+width: 1080px;
+height: 1920px;
+display: none;
+position: absolute;
+top: 0px;
+
+	}
+	.popup {
+		position:absolute;
+		top:100px;
+		left:73px;
+		background:#fff;
+		width:930px;
+		height:1226px;
+		margin:20px auto;
+		-moz-box-shadow: 2px 7px 30px #000000;
+-webkit-box-shadow: 2px 7px 30px #000000;
+box-shadow: 2px 7px 30px #000000;
+border:2px solid #4b0024;
+	}
+	.boxPadding {
+		padding:20px;
+	}
+.closePopup {
+	height:61px;
+	width:60px;
+	background-image:url('assets/close.png')  ;
+}
+
+.star {
+	float:left;
+	height:140px;
+	width:155px; 
+	background-image:url('assets/starOff.png')  ;
+}
+.starchecked {
+	background-image:url('assets/starOn.png')  ;
 }

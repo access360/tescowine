@@ -1,9 +1,9 @@
 <?php 
 
 	
-	foreach($xmlo->channel->item as $row):
+	foreach($wines as $row):
 		
-		echo '<p><h3>'.$row->Product_name.'</h3>'.$row->description."</p><br/>";
+		echo '<p><img height="600px" src="'.base_url().'images/wines/'.$row->product_image.'"/><h3>'.$row->product_name.'</h3>'.$row->description."</p><br/>";
 		
 	endforeach;
 	
