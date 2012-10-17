@@ -9,6 +9,19 @@ var starValue;
  **********************************************/
 
 $(document).ready(function() {
+	
+		$('#startButton').click(function() {
+
+		
+	 window.location = base_url + "welcome/stand_menu/";
+		
+		
+		
+		
+		
+	});
+	
+	
 	$('.wineRack').click(function() {
 
 		var wine_id = $(this).attr('id');
@@ -17,7 +30,41 @@ $(document).ready(function() {
 		
 		$("#wine_" + wine_id).fadeIn();
 		
+		var currentValue = $("#wine_" + wine_id).find('#starValueInput').val();
+		if(currentValue == 1)
+		{
+			$("#wine_" + wine_id).find('.oneStar').addClass("starchecked");
+		}
 		
+		if(currentValue == 2)
+		{
+			$("#wine_" + wine_id).find('.oneStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.twoStar').addClass("starchecked");
+		}
+		
+		if(currentValue == 3)
+		{
+			$("#wine_" + wine_id).find('.oneStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.twoStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.threeStar').addClass("starchecked");
+		}
+		
+		if(currentValue == 4)
+		{
+			$("#wine_" + wine_id).find('.oneStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.twoStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.threeStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.fourStar').addClass("starchecked");
+		}
+		
+		if(currentValue == 5)
+		{
+			$("#wine_" + wine_id).find('.oneStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.twoStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.threeStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.fourStar').addClass("starchecked");
+			$("#wine_" + wine_id).find('.fiveStar').addClass("starchecked");
+		}
 		
 	});
 	
@@ -25,9 +72,30 @@ $(document).ready(function() {
 	$('.closePopup').click(function() {
 
 		
+		$(this).parent().parent().parent().fadeOut();
+		
+		
+		
+	});
+	
+	$('.submitReview').click(function() {
+
+		if($(this).parent().find('#starValueInput').val() > 0) {
 		$(".popupBack").fadeOut();
 		
+		$("#detailsForm").fadeIn();
+	} else { 
+		alert('must enter rating');
+		}
 		
+	});
+	
+	$('.loadTerms').click(function() {
+
+		
+		
+		
+		$("#terms").fadeIn();
 		
 	});
 	
@@ -43,14 +111,17 @@ $(document).ready(function() {
 		
 	});
 	
+	
+	
 	$('.star').click(function() {
 			
 			var wine_id = $(this).parent().attr('id');
 		
 			
+			
 			if($(this).hasClass('oneStar')) {
 			
-			$('.star').removeClass("starchecked");
+			$("#" + wine_id).find('.star').removeClass("starchecked");
 			
 				if(starValue == 1) 
 				{ 
@@ -58,7 +129,7 @@ $(document).ready(function() {
 				starValue = 0; 
 				} else if(starValue != 1) 
 				{
-				$(this).stop().toggleClass("starchecked");
+				$(this).stop().addClass("starchecked");
 				
 				starValue = 1;
 				}
@@ -67,18 +138,18 @@ $(document).ready(function() {
 			
 			if($(this).hasClass('twoStar')) {
 				
-			$('.star').removeClass("starchecked");	
+			
 			
 				
 			if(starValue == 2) 
 				{ 
-				$('.star').removeClass("starchecked");	
+				$("#" + wine_id).find('.star').removeClass("starchecked");	
 				starValue = 0; 
 				} 
 				else if(starValue != 2) 
 				{
-				$(this).stop().toggleClass("starchecked");
-				$("#" + wine_id).find('.oneStar').toggleClass("starchecked");
+				$(this).stop().addClass("starchecked");
+				$("#" + wine_id).find('.oneStar').addClass("starchecked");
 				starValue = 2;
 				}
 		
@@ -86,19 +157,19 @@ $(document).ready(function() {
 			
 			if($(this).hasClass('threeStar')) {
 				
-			$('.star').removeClass("starchecked");
+			
 			
 			if(starValue == 3) 
 				{ 
-				$('.star').removeClass("starchecked");	
+					$("#" + wine_id).find('.star').removeClass("starchecked");
 				starValue = 0; 
 				} 
 				else if(starValue != 3) 
 				{
-					$(this).stop().toggleClass("starchecked");
+					$(this).stop().addClass("starchecked");
 			
-					$("#" + wine_id).find('.twoStar').toggleClass("starchecked");
-					$("#" + wine_id).find('.oneStar').toggleClass("starchecked");
+					$("#" + wine_id).find('.twoStar').addClass("starchecked");
+					$("#" + wine_id).find('.oneStar').addClass("starchecked");
 					
 					starValue = 3;
 				}
@@ -110,19 +181,19 @@ $(document).ready(function() {
 			
 			
 			if($(this).hasClass('fourStar')) {
-			$('.star').removeClass("starchecked");	
+			
 			
 			if(starValue == 4) 
 				{ 
-				$('.star').removeClass("starchecked");	
+				$("#" + wine_id).find('.star').removeClass("starchecked");	
 				starValue = 0; 
 				} 
 				else if(starValue != 4) 
 				{
-					$(this).stop().toggleClass("starchecked");
-					$("#" + wine_id).find('.threeStar').toggleClass("starchecked");
-					$("#" + wine_id).find('.twoStar').toggleClass("starchecked");
-					$("#" + wine_id).find('.oneStar').toggleClass("starchecked");
+					$(this).stop().addClass("starchecked");
+					$("#" + wine_id).find('.threeStar').addClass("starchecked");
+					$("#" + wine_id).find('.twoStar').addClass("starchecked");
+					$("#" + wine_id).find('.oneStar').addClass("starchecked");
 					
 					starValue = 4;
 				}
@@ -132,21 +203,21 @@ $(document).ready(function() {
 			}
 			
 			if($(this).hasClass('fiveStar')) {
-			$('.star').removeClass("starchecked");	
+			
 			
 			
 			if(starValue == 5) 
 				{ 
-				$('.star').removeClass("starchecked");	
+				$("#" + wine_id).find('.star').removeClass("starchecked");	
 				starValue = 0; 
 				} 
 				else if(starValue != 5) 
 				{
 					$(this).stop().toggleClass("starchecked");
-					$("#" + wine_id).find('.fourStar').toggleClass("starchecked");
-					$("#" + wine_id).find('.threeStar').toggleClass("starchecked");
-					$("#" + wine_id).find('.twoStar').toggleClass("starchecked");
-					$("#" + wine_id).find('.oneStar').toggleClass("starchecked");
+					$("#" + wine_id).find('.fourStar').addClass("starchecked");
+					$("#" + wine_id).find('.threeStar').addClass("starchecked");
+					$("#" + wine_id).find('.twoStar').addClass("starchecked");
+					$("#" + wine_id).find('.oneStar').addClass("starchecked");
 					
 					starValue = 5;
 				}
@@ -154,6 +225,9 @@ $(document).ready(function() {
 			
 			
 			}
+			
+			//apply starvalue to input
+			$("#" + wine_id).find('#starValueInput').val(starValue);
 		});
 
 

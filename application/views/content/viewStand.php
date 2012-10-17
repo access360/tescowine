@@ -39,7 +39,7 @@
 <?php foreach($stand as $row): ?>
 	
 		
-	<h2><?=$row->stand_location?> <?=$row->stand_name?></h2>
+	<h3><?=$row->stand_location?> <?=$row->stand_name?></h3>
 
 	
 	<?php endforeach;?>	</div>
@@ -66,9 +66,9 @@
 	<div class="boxPadding">
 	<div class="closePopup"></div>
 	<h1><?=$row->product_name?></h1><br/>
-	<img  src="<?=base_url()?>images/wines/<?=$row->product_image?>"/><br/>
+	<div style="float:left; width:200px; padding-left:100px;"><img height="445px;" src="<?=base_url()?>images/wines/<?=$row->product_image?>"/></div>
 	
-	<?=$row->description?>
+	<div style="float:left; width:520px;"><?=$row->description?></div>
 	
 	<div class="starRating" id="star_<?=$row->product_ref?>">
 	
@@ -87,8 +87,47 @@
 	<div class="star  fiveStar">
 		
 	</div>	
+	
+	<input id="starValueInput" name="starvalue"/>
+	<div class="submitReview">
+		SUBMIT
+	</div>
 	</div>	
+	
+	
 	</div>
 </div>
 </div>
 <?php endforeach;?>
+
+<div
+<div id="detailsForm" class="popupBack">
+	<div class="popup">
+	<div class="boxPadding">
+		<div class="closePopup"></div>
+		<h1>Thanks for your rating</h1>
+		<h2>
+			Enter the prize draw to
+win a case of this wine
+		</h2>
+		<p>Name<br/><input  name="name"/></p>
+		
+		<p>Email<br/><input  name="email"/></p>
+		
+		<p>Phone<br/><input  name="phone"/></p>
+		
+		<div class="loadTerms">Terms</div>
+	</div>
+	</div>
+	
+</div>
+<div id="terms" class="popupBack">
+	<div class="popup">
+	<div class="boxPadding">
+		<div class="closePopup"></div>
+		terms to go here
+	</div>
+	</div>
+	
+</div>
+

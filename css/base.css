@@ -1,4 +1,40 @@
 @charset "utf-8";
+
+@font-face {
+    font-family: 'Tesco';
+    src: url('fonts/TESCO.eot');
+    src: url('fonts/TESCO.eot?#iefix') format('embedded-opentype'),
+         url('fonts/TESCO.woff') format('woff'),
+         url('fonts/TESCO.ttf') format('truetype'),
+         url('fonts/TESCO.svg#MyriadProBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+ 
+}
+@font-face {
+    font-family: 'TescoB';
+    src: url('fonts/TESCOB.eot');
+    src: url('fonts/TESCOB.eot?#iefix') format('embedded-opentype'),
+         url('fonts/TESCOB.woff') format('woff'),
+         url('fonts/TESCOB.ttf') format('truetype'),
+         url('fonts/TESCOB.svg#MyriadProBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+ 
+}
+@font-face {
+    font-family: 'TescoL';
+    src: url('fonts/TESCOBL.eot');
+    src: url('fonts/TESCOBL.eot?#iefix') format('embedded-opentype'),
+         url('fonts/TESCOBL.woff') format('woff'),
+         url('fonts/TESCOBL.ttf') format('truetype'),
+         url('fonts/TESCOBL.svg#MyriadProBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+ 
+}
+
+
 body {
 	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
 	background-color: #42413C;
@@ -12,10 +48,28 @@ ul, ol, dl { /* Due to variations between browsers, it's best practices to zero 
 	padding: 0;
 	margin: 0;
 }
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6  {
+	text-align:center;
+	color:#730055;
+	font-family:'Tesco';
 	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
 	padding-right: 15px;
 	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+h1 {
+	font-size:115px;
+	line-height:120px;
+}
+h2 {
+	font-size:78px;
+	line-height:78px;
+}
+p {
+font-family:'Tesco';
+margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+	
 }
 a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
 	border: none;
@@ -73,11 +127,19 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 
 	#standHeading {
 		width:926px;
-		height:121px;
+		height:100px;
 		background: #000;
 		color:#fff;
 		margin:20px auto;
 		text-align:center;
+		padding-top:21px;
+		
+	}
+	
+	#standHeading h3 {
+		color:#fff;
+		font-size:42px;
+		line-height:42px;
 	}
 	#wineContainer {
 		width:926px;
@@ -94,6 +156,18 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 		text-align:center;
 	}
 	
+	#mapHeading {
+		width:926px;
+		height:171px;
+		background: #fff;
+		color:#000;
+		margin:20px auto;
+		text-align:center;
+	}
+	.FrontPagesubheading h2 {
+		font-size:48px;
+		
+	}
 	.popupBack {
 		background-color: rgba(181, 119, 165, 0.6);
 background: rgba(181, 119, 165, 0.6);
@@ -122,11 +196,16 @@ border:2px solid #4b0024;
 		padding:20px;
 	}
 .closePopup {
+	float:right;
 	height:61px;
 	width:60px;
 	background-image:url('assets/close.png')  ;
 }
-
+.starRating {
+	clear:both;
+	margin: 0 auto;
+width: 775px;
+}
 .star {
 	float:left;
 	height:140px;
@@ -135,4 +214,43 @@ border:2px solid #4b0024;
 }
 .starchecked {
 	background-image:url('assets/starOn.png')  ;
+}
+
+.buttonBevel {
+	color:#fff;
+	font-family: 'Tesco';
+	text-align:center;
+	font-size:42px;
+	border:dashed 0px #000000;
+-moz-border-radius: 22px;
+-webkit-border-radius: 22px;
+border-radius: 22px;
+	padding:30px;
+	background:#730055;
+	
+	background: #9d0bb7; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI3NCUiIHN0b3AtY29sb3I9IiM5ZDBiYjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNTkwMDZiIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+background: -moz-linear-gradient(top, #9d0bb7 74%, #59006b 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(74%,#9d0bb7), color-stop(100%,#59006b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #9d0bb7 74%,#59006b 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #9d0bb7 74%,#59006b 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #9d0bb7 74%,#59006b 100%); /* IE10+ */
+background: linear-gradient(to bottom, #9d0bb7 74%,#59006b 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9d0bb7', endColorstr='#59006b',GradientType=0 ); /* IE6-8 */
+	
+-moz-box-shadow:inset 18px 24px 60px #e673de;
+-webkit-box-shadow:inset 18px 24px 60px #e673de;
+box-shadow:inset 18px 24px 60px #e673de;	
+}
+.buttonContainer {
+	width:400px;
+	margin:0 auto;
+	display:block;
+	-moz-border-radius: 22px;
+-webkit-border-radius: 22px;
+border-radius: 22px;
+	-moz-box-shadow: 10px 10px 28px #000000;
+-webkit-box-shadow: 10px 10px 28px #000000;
+box-shadow: 10px 10px 28px #000000;
 }

@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 	 
 	public function index()
 	{
+		$this->session->unset_userdata('sessionID');
 		 	 $data['mainContent'] = "content/frontpage";
 			   $this->load->vars($data);
 		 $this->load->view('templates/base');
@@ -28,6 +29,18 @@ class Welcome extends CI_Controller {
 	
 	public function stand_menu()
 	{
+		//set session
+		$sessionID = $this->session->userdata('sessionID');
+        if ( $sessionID == NULL) {
+           echo "no session";
+			$newdata = array(
+                   'sessionID'  => now()
+               );
+		$this->session->set_userdata($newdata);
+        } else {
+        	echo $this->session->userdata('sessionID');
+        }
+			
 		//get all stands
 		
 		//display page

@@ -1,6 +1,6 @@
-<div id="wineHeading">
-	<h1>Touch the stand where
-you tasted the wine</h1>
+<div id="mapHeading">
+	<h2>Touch the stand where
+you tasted the wine</h2>
 </div>
 <div id="mapBase">
 
