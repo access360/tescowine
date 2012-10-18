@@ -129,11 +129,11 @@ to enter your rating</h3>
 win a case of this wine
 		</h2>
 		<div class="registerBox">
-		<p>Name:*<br/><input  name="name"/></p>
+		<p>Name:*<br/><input  id="keyboard" type="text" name="name"/></p>
 		
-		<p>Email:*<br/><input  name="email"/></p>
+		<p>Email:*<br/><input  id="keyboard2" type="text" name="email"/></p>
 		
-		<p>Phone:*<br/><input  name="phone"/></p>
+		<p>Phone:*<br/><input  id="keyboard3" type="text" name="phone"/></p>
 		<p>I have read the terms:*</p><div class="formCheckbox"></div>
 			<div style="width:230px; float:right; " class="buttonContainer">
 	

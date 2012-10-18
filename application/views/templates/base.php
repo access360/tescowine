@@ -7,8 +7,10 @@
 <!-- TemplateEndEditable -->
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
+<link href="<?=base_url()?>css/theme/jquery-ui-1.9.0.custom.css" rel="stylesheet" type="text/css">
 <link href="<?=base_url()?>css/base.css" rel="stylesheet" type="text/css">
 <link href="<?=base_url()?>css/map.css" rel="stylesheet" type="text/css">
+<link href="<?=base_url()?>css/keyboard.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -24,6 +26,11 @@
   <!-- end .container --></div>
   
    <script src="<?=base_url()?>js/jquery.js"></script>
+    <script src="<?=base_url()?>js/jqueryui.js"></script>
+     <script src="<?=base_url()?>js/cycle.js"></script>
+       <script src="<?=base_url()?>js/jquery.keyboard.min.js"></script>
+   <script src="<?=base_url()?>js/jquery.keyboard.extension-typing.js"></script>
+   <script src="<?=base_url()?>js/jquery.keyboard.extension-autocomplete.js"></script>
     <script src="<?=base_url()?>js/scripts.js"></script>
 </body>
 </html>
