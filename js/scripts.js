@@ -80,12 +80,13 @@ $(document).ready(function() {
 	
 	$('.submitReview').click(function() {
 
-		if($(this).parent().find('#starValueInput').val() > 0) {
+var CurrentReview = $(this).parent().parent().find('#starValueInput').val();
+		if(CurrentReview > 0) {
 		$(".popupBack").fadeOut();
 		
 		$("#detailsForm").fadeIn();
 	} else { 
-		alert('must enter rating');
+		alert('must enter rating ' + CurrentReview);
 		}
 		
 	});
@@ -138,7 +139,7 @@ $(document).ready(function() {
 			
 			if($(this).hasClass('twoStar')) {
 				
-			
+			$("#" + wine_id).find('.star').removeClass("starchecked");	
 			
 				
 			if(starValue == 2) 
@@ -158,7 +159,7 @@ $(document).ready(function() {
 			if($(this).hasClass('threeStar')) {
 				
 			
-			
+			$("#" + wine_id).find('.star').removeClass("starchecked");	
 			if(starValue == 3) 
 				{ 
 					$("#" + wine_id).find('.star').removeClass("starchecked");
@@ -182,7 +183,7 @@ $(document).ready(function() {
 			
 			if($(this).hasClass('fourStar')) {
 			
-			
+			$("#" + wine_id).find('.star').removeClass("starchecked");	
 			if(starValue == 4) 
 				{ 
 				$("#" + wine_id).find('.star').removeClass("starchecked");	
@@ -204,7 +205,7 @@ $(document).ready(function() {
 			
 			if($(this).hasClass('fiveStar')) {
 			
-			
+			$("#" + wine_id).find('.star').removeClass("starchecked");	
 			
 			if(starValue == 5) 
 				{ 

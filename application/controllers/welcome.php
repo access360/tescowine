@@ -38,7 +38,7 @@ class Welcome extends CI_Controller {
                );
 		$this->session->set_userdata($newdata);
         } else {
-        	echo $this->session->userdata('sessionID');
+        	$data['currentSession'] = $this->session->userdata('sessionID');
         }
 			
 		//get all stands

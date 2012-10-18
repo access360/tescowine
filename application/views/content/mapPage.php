@@ -1,3 +1,4 @@
+<link href="../../../css/map.css" rel="stylesheet" type="text/css" />
 <div id="mapHeading">
 	<h2>Touch the stand where
 you tasted the wine</h2>
