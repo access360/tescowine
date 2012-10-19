@@ -92,10 +92,10 @@ class Welcome extends CI_Controller {
 		
 		if($this->stand_model->check_wineID_exists($productID)) {
 					//it exists so update it
-					//echo $productID." its there - ";
+					echo $productID." its there - ";
 					
 					//update it
-					$this->stand_model->update_wine($productID, $productname, $description, $image);
+					//$this->stand_model->update_wine($productID, $productname, $description, $image);
 					
 				} else {
 					//it doesn't exist so create it
@@ -106,7 +106,7 @@ class Welcome extends CI_Controller {
 		
 		//check if file is on server
 		if(file_exists("images/wines/".$image)) {
-			//echo $image. " image here<br/>";
+			echo $image. " image here<br/>";
 		} else {
 			
 			echo "no image<br/>";
