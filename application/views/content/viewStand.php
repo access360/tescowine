@@ -133,8 +133,9 @@ win a case of this wine
 		
 		<p>Email:*<br/><input  id="keyboard2" type="text" name="email"/></p>
 		
-		<p>Phone:*<br/><input  id="keyboard3" type="text" name="phone"/></p>
-		<p>I have read the terms:*</p><div class="formCheckbox"></div>
+		<p>Phone:<br/><input  id="keyboard3" type="text" name="phone"/></p>
+		<p>* Required field</p>
+		<p style="margin-bottom:0px;">I have read the terms:*</p><div class="formCheckbox"></div>
 			<div style="width:230px; float:right; " class="buttonContainer">
 	
 <div id="submitEntry" class="buttonBevel ">
@@ -142,8 +143,9 @@ win a case of this wine
 		Submit
 </div>
 </div>
-		* Required field<br/>
-		<div class="loadTerms">View Terms and Conditions</div>
+		
+		<div class="loadTerms" style="padding-left:10px;">View Terms and Conditions</div>
+		
 		</div>
 	</div>
 	</div>

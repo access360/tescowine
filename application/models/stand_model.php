@@ -92,6 +92,7 @@ class Stand_model extends CI_Model {
 	function get_stand_wines($stand_id) {
 		
 		//get wines for $stand_id
+		$this->db->order_by('order', 'ASC');
 		$this->db->where('stand_id', $stand_id);
 		$query = $this->db->get('wines');
 		 if ($query->num_rows > 0) {
