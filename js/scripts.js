@@ -153,6 +153,10 @@ var CurrentReview = $(this).parent().parent().find('#starValueInput').val();
 	});
 	
 	
+	$('.tickbox').click(function() {
+		
+		
+	});
 	
 	$('.star').click(function() {
 			
