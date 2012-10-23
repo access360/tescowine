@@ -79,8 +79,18 @@ to enter your rating</h3>
 	<div class="closePopup"></div>
 	<div class="wineTitle"><h2><?=$row->product_name?></h2></div>
 	<div style="float:left; width:200px; padding-left:100px; margin-bottom:20px;"><img height="445px;" src="<?=base_url()?>images/wines/<?=$row->product_image?>"/></div>
+	<?php
+	$wineLength = 275;
+	$description = substr(trim($row->description),0, $wineLength);
+	if(strlen($row->description) > $wineLength) {
+		$readmore = "...<br/>Read More";
+	} else {
+		$readmore = "";
+	}
 	
-	<div class="wineDescription" style="float:left; width:550px; margin-bottom:20px;"><em><?=$row->description?></em></div>
+	
+	?>
+	<div class="wineDescription" style="float:left; width:550px; margin-bottom:20px;"><em><?=$description?><?=$readmore?></em></div>
 	
 	<div class="starRating" id="star_<?=$row->product_ref?>">
 		<h4>Rate this wine by tapping the stars below</h4>
@@ -118,39 +128,10 @@ to enter your rating</h3>
 </div>
 <?php endforeach;?>
 
-<div
-<div id="detailsForm" class="popupBack">
-	<div class="popup">
-	<div class="boxPadding">
-		<div class="closePopup"></div>
-		<h1>Thanks<br/> for your rating</h1>
-		<h2>
-			Enter the prize draw to
-win a case of this wine
-		</h2>
-		<div class="registerBox">
-		<p>Name:*<br/><input  id="keyboard" type="text" name="name"/></p>
-		
-		<p>Email:*<br/><input  id="keyboard2" type="text" name="email"/></p>
-		
-		<p>Phone:<br/><input  id="keyboard3" type="text" name="phone"/></p>
-		<p>* Required field</p>
-		<p style="margin-bottom:0px;">I have read the terms:*</p><div class="formCheckbox"></div>
-			<div style="width:230px; float:right; " class="buttonContainer">
-	
-<div id="submitEntry" class="buttonBevel ">
+<?=$this->load->view('global/form')?>
 
-		Submit
-</div>
-</div>
-		
-		<div class="loadTerms" style="padding-left:10px;">View Terms and Conditions</div>
-		
-		</div>
-	</div>
-	</div>
-	
-</div>
+
+
 <div id="terms" class="popupBack">
 	<div class="popup">
 	<div class="boxPadding">
