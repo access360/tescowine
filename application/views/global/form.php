@@ -17,7 +17,7 @@ win a case of this wine
 		<p style="margin-bottom:0px;">I have read the terms:*</p><div class="formCheckbox"></div>
 			<div style="width:230px; float:right; " class="buttonContainer">
 	
-<div id="submitEntry" class="buttonBevel ">
+<div id="submitEntry" class="buttonBevel submitEntry">
 
 		Submit
 </div>
