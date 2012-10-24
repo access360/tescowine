@@ -27,5 +27,16 @@ class Forms extends CI_Controller {
 		
 		
 	}
+	function addEntry() {
+		$name = $this->input->post('name');
+		$email = $this->input->post('email');
+		$phone = $this->input->post('phone');
+		$sessionID = $this->input->post('sessionID');
+		
+		$output  = "name:".$name." email:".$email." phone:".$phone." session:".$sessionID;
+		$this->forms_model->add_entry($name, $email, $phone, $sessionID);
+		
+		echo $output;
+	}
 
 }

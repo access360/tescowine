@@ -79,4 +79,6 @@ to enter your rating</h3>
 <?=$this->load->view('global/terms')?>
 
 
+<?=$this->load->view('global/finished')?>
+
 

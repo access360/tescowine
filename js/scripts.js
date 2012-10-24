@@ -103,6 +103,15 @@ $(document).ready(function() {
 		
 	});
 	
+	$('#finish').click(function(){
+			
+	 window.location = base_url;
+	});
+	
+	$('#continue').click(function(){
+			
+	 window.location = base_url + "welcome/stand_menu/";
+	});
 	
 	$('.wineRack').click(function() {
 
@@ -206,7 +215,9 @@ $('.submitEntry').click(function() {
 	updateTips("Form OK");
 var email = $('#keyboard2');
 var name = $('#keyboard');
+var phone = $('#keyboard3');
 var checked = $('#termsCheck');
+var SessionID = $('#sessionID');
  name.removeClass( "ui-state-error" );
  email.removeClass( "ui-state-error" );
 	var bValid = true;
@@ -215,7 +226,23 @@ var checked = $('#termsCheck');
 	 bValid = bValid && checkRegexp( email, /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i, "Must be a valid email eg. name@domain.com" );
  bValid = bValid && checkCheckbox(checked);	
 		if(bValid) {
-			//alert('valid'); 
+			//form is valid, post it
+			$.post(base_url + "forms/addEntry", { 
+				email: email.val(),
+				phone: phone.val(),
+				name: name.val(),
+				sessionID: SessionID.val()
+				
+				},
+		   function(data) {
+		  //   alert("Data Loaded: " + data);
+		   });
+		   
+		   $(".popupBack").fadeOut();
+		
+		$("#finished").fadeIn();
+		   
+		   
 		} else { 
 			//alert('not valid')
 			}
