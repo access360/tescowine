@@ -39,6 +39,8 @@
 	</div>	
 	
 	<input type="hidden" id="starValueInput" name="starvalue"/>
+	<input type="hidden" id="wineID" name="wineID" value="<?=$row->product_ref?>"/>
+	<input type="hidden" id="sessionID" name="sessionID" value="<?=$currentSession?>"/>
 	
 	<div style="width:230px; float:right; " class="buttonContainer">
 	

@@ -51,7 +51,8 @@ class Welcome extends CI_Controller {
 	
 	public function display_stand($stand_id)
 	{
-				
+				//session id
+				$data['currentSession'] = $this->session->userdata('sessionID');
 			//get stand	
 			$data['stand'] 	= $this->stand_model->get_stand($stand_id);
 			

@@ -131,7 +131,12 @@ $(document).ready(function() {
 	$('.submitReview').click(function() {
 
 var CurrentReview = $(this).parent().parent().find('#starValueInput').val();
+var WineID = $(this).parent().parent().find('#wineID').val();
+var SessionID = $(this).parent().parent().find('#sessionID').val();
+
 		if(CurrentReview > 0) {
+			alert('wineID:'+WineID + ' Session:' + SessionID + ' CurrentReview:' + CurrentReview);
+			
 		$(".popupBack").fadeOut();
 		
 		$("#detailsForm").fadeIn();
