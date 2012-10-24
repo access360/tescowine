@@ -19,6 +19,10 @@ class Forms extends CI_Controller {
 		
 		$starValue = $this->input->post('starvalue');
 		$wineID = $this->input->post('windeID');
+		$sessionID = $this->input->post('sessionID');
+		$output = $starValue." ".$wineID." ".$sessionID;
+		echo $output;
+		
 	}
 
 }

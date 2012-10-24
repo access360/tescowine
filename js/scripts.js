@@ -135,13 +135,25 @@ var WineID = $(this).parent().parent().find('#wineID').val();
 var SessionID = $(this).parent().parent().find('#sessionID').val();
 
 		if(CurrentReview > 0) {
-			alert('wineID:'+WineID + ' Session:' + SessionID + ' CurrentReview:' + CurrentReview);
+			alert(base_url +'wineID:'+ WineID + ' Session:' + SessionID + ' CurrentReview:' + CurrentReview);
 			
+			$.post(base_url + "forms/rateWine", { 
+				starvalue: CurrentReview,
+				windeID: WineID,
+				sessionID: SessionID
+				
+				},
+		   function(data) {
+		     alert("Data Loaded: " + data);
+		   });
+		   
 		$(".popupBack").fadeOut();
 		
 		$("#detailsForm").fadeIn();
 	} else { 
+		
 		alert('must enter rating ' + CurrentReview);
+		
 		}
 		
 	});
