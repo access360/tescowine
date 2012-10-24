@@ -9,5 +9,7 @@ class Forms_model extends CI_Model {
     }
 	
 	
-	
+	function add_rating($starValue, $wineID, $sessionID) {
+		
+	}
 }

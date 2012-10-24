@@ -1,14 +1,46 @@
 var base_url = $('#baseurl').val();
 var starValue;
+var tips = $( ".validateTips" );
+
+
 
         function checkRegexp( o, regexp, n ) {
             if ( !( regexp.test( o.val() ) ) ) {
                 o.addClass( "ui-state-error" );
-              //  updateTips( n );
+               updateTips( n );
                 return false;
             } else {
                 return true;
             }
+        }
+        
+         function checkLength( o, n, min, max ) {
+            if ( o.val().length > max || o.val().length < min ) {
+                o.addClass( "ui-state-error" );
+              updateTips( "Length of " + n + " must be between " +
+                  min + " and " + max + "." );
+                return false;
+            } else {
+                return true;
+            }
+        }
+        
+        function checkCheckbox(o){
+        	if(o.val() != 1) {
+        		updateTips("You must read the Terms");
+        		return false; 
+        	} else {
+        		return true
+        	}
+        }
+        
+        function updateTips( t ) {
+            tips
+                .text( t )
+                .addClass( "ui-state-highlight" );
+            setTimeout(function() {
+                tips.removeClass( "ui-state-highlight", 1500 );
+            }, 500 );
         }
 			
 /***********************************************/
@@ -130,12 +162,13 @@ $(document).ready(function() {
 	
 	$('.submitReview').click(function() {
 
-var CurrentReview = $(this).parent().parent().find('#starValueInput').val();
-var WineID = $(this).parent().parent().find('#wineID').val();
-var SessionID = $(this).parent().parent().find('#sessionID').val();
+	var CurrentReview = $(this).parent().parent().find('#starValueInput').val();
+	var WineID = $(this).parent().parent().find('#wineID').val();
+	var SessionID = $(this).parent().parent().find('#sessionID').val();
 
 		if(CurrentReview > 0) {
-			alert(base_url +'wineID:'+ WineID + ' Session:' + SessionID + ' CurrentReview:' + CurrentReview);
+			
+			//alert(base_url +'wineID:'+ WineID + ' Session:' + SessionID + ' CurrentReview:' + CurrentReview);
 			
 			$.post(base_url + "forms/rateWine", { 
 				starvalue: CurrentReview,
@@ -144,27 +177,50 @@ var SessionID = $(this).parent().parent().find('#sessionID').val();
 				
 				},
 		   function(data) {
-		     alert("Data Loaded: " + data);
+		     //alert("Data Loaded: " + data);
 		   });
 		   
 		$(".popupBack").fadeOut();
 		
 		$("#detailsForm").fadeIn();
+		
+		
 	} else { 
 		
-		alert('must enter rating ' + CurrentReview);
+	var OriginalColor = $(this).parent().parent().find("#ratingWarning").css("color");
+		$(this).parent().parent().find("#ratingInstruction").fadeOut();
+		
+		$(this).parent().parent().find("#ratingWarning").delay('500').fadeIn().find("h4").animate({
+			
+			color:"#ff653c"
+		}, 100).delay('1000').animate({
+			color: "#730055"
+		});
+		
 		
 		}
 		
 	});
 	
 $('.submitEntry').click(function() {
+	updateTips("Form OK");
 var email = $('#keyboard2');
+var name = $('#keyboard');
+var checked = $('#termsCheck');
+ name.removeClass( "ui-state-error" );
+ email.removeClass( "ui-state-error" );
 	var bValid = true;
+	
+	 bValid = bValid && checkLength( name, "Name", 1, 50 );	
+	 bValid = bValid && checkRegexp( email, /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i, "Must be a valid email eg. name@domain.com" );
+ bValid = bValid && checkCheckbox(checked);	
+		if(bValid) {
+			//alert('valid'); 
+		} else { 
+			//alert('not valid')
+			}
 		
-	 bValid = bValid && checkRegexp( email, /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i, "eg. ui@jquery.com" );
-
-		if(bValid) {alert('valid'); } else { alert('not valid')}
+		
 	});
 	
 	
@@ -195,9 +251,11 @@ var email = $('#keyboard2');
 		if($(this).hasClass('isTicked')) {
 			
 			$(this).removeClass('isTicked');
+			$("#termsCheck").val("");
 		
 		} else {
 			$(this).addClass('isTicked');
+			$("#termsCheck").val("1");
 		}
 	});
 	
@@ -320,3 +378,8 @@ var email = $('#keyboard2');
 
 
 }); 
+$(document).ready(function() {
+    $('.slideshow').cycle({
+		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+	});
+});

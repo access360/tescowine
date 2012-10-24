@@ -14,6 +14,7 @@ to be in with a chance of winning.*</h2>
 </div>
 <div class="FrontPagesubheading">
 <h2>Recently reviewed wines</h2>
+<?=$this->load->view('content/slideshow')?>
 </div>
 
 <div style="text-align:center;">

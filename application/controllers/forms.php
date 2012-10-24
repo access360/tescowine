@@ -21,7 +21,10 @@ class Forms extends CI_Controller {
 		$wineID = $this->input->post('windeID');
 		$sessionID = $this->input->post('sessionID');
 		$output = $starValue." ".$wineID." ".$sessionID;
+		
+		$this->forms_model->add_rating($starValue, $wineID, $sessionID);
 		echo $output;
+		
 		
 	}
 

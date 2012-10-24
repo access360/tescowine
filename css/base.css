@@ -309,4 +309,9 @@ border-radius: 27px;
 	width:50px;
 	border:solid 3px #5e035e;
 	margin-left:15px;
+	margin-right:15px;
+	float:left;
+}
+.isTicked {
+	background:url('assets/tick.png');
 }

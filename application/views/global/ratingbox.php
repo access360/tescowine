@@ -20,8 +20,11 @@
 	<div class="wineDescription" style="float:left; width:550px; margin-bottom:20px;"><em><?=$description?><?=$readmore?></em></div>
 	
 	<div class="starRating" id="star_<?=$row->product_ref?>">
-		<h4>Rate this wine by tapping the stars below</h4>
-	
+		
+		<div style="height:40px;">
+		<div id="ratingInstruction"><h4 >Rate this wine by tapping the stars below</h4></div>
+		<div id="ratingWarning" style="display:none;" ><h4>You must enter a rating</h4></div>
+		</div>
 	<div class="star  oneStar">
 		
 	</div>	

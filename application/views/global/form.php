@@ -8,13 +8,15 @@
 win a case of this wine
 		</h2>
 		<div class="registerBox">
+			<p class="validateTips">* Required field</p>
 		<p>Name:*<br/><input  id="keyboard" type="text" name="name"/></p>
 		
 		<p>Email:*<br/><input  id="keyboard2" type="text" name="email"/></p>
 		
 		<p>Phone:<br/><input  id="keyboard3" type="text" name="phone"/></p>
-		<p>* Required field</p>
-		<p style="margin-bottom:0px;">I have read the terms:*</p><div class="formCheckbox"></div>
+		<p></p>
+		<div class="formCheckbox" ></div><p style="margin-bottom:0px; float:left;">I have read the terms:*</p>
+		<input  id="termsCheck" type="hidden" name="termsCheck"/>
 			<div style="width:230px; float:right; " class="buttonContainer">
 	
 <div id="submitEntry" class="buttonBevel submitEntry">
@@ -23,7 +25,7 @@ win a case of this wine
 </div>
 </div>
 		
-		<div class="loadTerms" style="padding-left:10px;">View Terms and Conditions</div>
+		<div class="loadTerms" style="padding-left:10px; float:left;">View Terms and Conditions</div>
 		
 		</div>
 	</div>
