@@ -45,5 +45,9 @@ class Forms extends CI_Controller {
 		
 		echo $output;
 	}
+	
+	function logAction() {
+		
+	}
 
 }
