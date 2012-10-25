@@ -1,4 +1,4 @@
-var base_url = $('#baseurl').val();
+var base_url = $('#baseurl').val() + "index.php/";
 var starValue;
 var timeout = 150000;
 var tips = $( ".validateTips" );
@@ -120,7 +120,7 @@ $(document).ready(function() {
 		$('#startButton').click(function() {
 
 		
-	 window.location = base_url + "index.php/welcome/stand_menu/";
+	 window.location = base_url + "welcome/stand_menu/";
 		
 		
 		
@@ -135,7 +135,7 @@ $(document).ready(function() {
 	
 	$('#continue').click(function(){
 			
-	 window.location = base_url + "index.php/welcome/stand_menu/";
+	 window.location = base_url + "welcome/stand_menu/";
 	});
 	
 	$('.wineRack').click(function() {
@@ -301,7 +301,7 @@ var LastReview = $("#lastReview")
 
 		var stand_id = $(this).attr('id');
 
-	 window.location = base_url + "index.php/welcome/display_stand/" + stand_id;
+	 window.location = base_url + "welcome/display_stand/" + stand_id;
 		
 		
 		
