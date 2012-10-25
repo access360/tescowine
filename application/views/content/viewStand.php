@@ -55,7 +55,7 @@ to enter your rating</h3>
 <div style="width:180px; float:right; margin-top:30px; " class="buttonContainer">
 	
 <div id="startButton" class="buttonBevel">
-<a href="<?=base_url()?>welcome/stand_menu">Back</a>
+<a href="<?=base_url()?>index.php/welcome/stand_menu">Back</a>
 </div></div>
 
 	</div>

@@ -230,8 +230,9 @@ right: 20px;
 }
 .starRating {
 	clear:both;
-	margin: 0 auto 20px;
+	margin: 0px auto 20px;
 width: 775px;
+padding-top:50px;
 }
 .star {
 	float:left;
