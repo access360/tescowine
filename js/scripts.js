@@ -119,7 +119,7 @@ $(document).ready(function() {
 	
 		$('#startButton').click(function() {
 
-		
+		  logAction('Start Button Pressed');
 	 window.location = base_url + "welcome/stand_menu/";
 		
 		
@@ -141,7 +141,7 @@ $(document).ready(function() {
 	$('.wineRack').click(function() {
 
 		var wine_id = $(this).attr('id');
- logAction('View wine ID ' + wine_id);
+ //need wine ref not id here: logAction('View wine ID ' + wine_id);
 	
 		
 		$("#wine_" + wine_id).fadeIn();

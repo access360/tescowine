@@ -1,4 +1,4 @@
-<input type="text" id="lastReview"/>
+<input type="hidden" id="lastReview"/>
 <div id="detailsForm" class="popupBack">
 	<div class="popup">
 	<div class="boxPadding">
