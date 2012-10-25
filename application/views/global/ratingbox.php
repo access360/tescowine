@@ -21,7 +21,7 @@
 	
 	<div class="starRating" id="star_<?=$row->product_ref?>">
 		
-		<div style="height:40px;">
+		<div style="height:70px;">
 		<div id="ratingInstruction"><h4 >Rate this wine by tapping the stars below</h4></div>
 		<div id="ratingWarning" style="display:none;" ><h4>You must enter a rating</h4></div>
 		</div>
