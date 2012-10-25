@@ -208,7 +208,7 @@ $(document).ready(function() {
 	var CurrentReview = $(this).parent().parent().find('#starValueInput').val();
 	var WineID = $(this).parent().parent().find('#wineID').val();
 	var SessionID = $(this).parent().parent().find('#sessionID').val();
-
+logAction('Wine Rated');
 		if(CurrentReview > 0) {
 			
 			//alert(base_url +'wineID:'+ WineID + ' Session:' + SessionID + ' CurrentReview:' + CurrentReview);
