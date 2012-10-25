@@ -317,3 +317,6 @@ border-radius: 27px;
 .isTicked {
 	background:url('assets/tick.png');
 }
+.orderedlist li {
+	padding-bottom:10px;
+}

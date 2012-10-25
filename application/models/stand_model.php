@@ -17,6 +17,18 @@ class Stand_model extends CI_Model {
 
 	}
 
+	function get_recently_reviewed($number = 9) {
+		$this ->db->limit($number);
+		$this ->db->group_by('wines.product_ref');
+		$this -> db -> order_by('ratings.rating_id', 'desc');
+		$this -> db -> join ('wines', 'ratings.wine_ref = wines.product_ref', 'left');
+		$query = $this -> db -> get('ratings');
+		if ($query -> num_rows > 0) {
+			return $query -> result();
+		} else {
+			return false;
+		}
+	}
 	function check_wine_exists($product_ref, $location) {
 		$this -> db -> where('product_ref', $product_ref);
 		$this -> db -> where('stand_id', $location);

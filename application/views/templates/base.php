@@ -20,7 +20,9 @@
     
     <?php if(isset($mainContent)) { $this->load->view($mainContent); } ?>
     
-    
+    <div id="reset" style="width:1080px; height:200px;  position:absolute; bottom:0px;">
+    	
+    </div>
     
      <!-- end .content --></div>
   <!-- end .container --></div>

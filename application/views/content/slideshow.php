@@ -22,141 +22,28 @@
 	}
 
 </style>
-
 <div class="slideshow">
-	<div>
-
-		<span id="wineContainer">
+<?php $count = 0;?>
+<?php foreach($recent_wine as $row):?>
+	<?php if($count == 0) { echo "<div>"; } ?>
+	<?php $count = $count + 1;?>
+	<span id="wineContainer">
 
 			<div class="wineRack">
-				<img class="wineRackImage"   src="<?=base_url() ?>images/wines/50035637.jpg"/>
+				<img class="wineRackImage"   src="<?=base_url() ?>images/wines/<?=$row->product_image?>"/>
+				
 				<br/>
-				Wine Name 1
-				<br/>
+				
 	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
+	<img class="smallStar"  src='<?=base_url()?>css/assets/<?php if($row->rating > 1){ echo "starOn.png"; } else { echo "starOff.png"; }?>'/>
+	<img class="smallStar"  src='<?=base_url()?>css/assets/<?php if($row->rating > 2){ echo "starOn.png"; } else { echo "starOff.png"; }?>'/>
+	<img class="smallStar"  src='<?=base_url()?>css/assets/<?php if($row->rating > 3){ echo "starOn.png"; } else { echo "starOff.png"; }?>'/>
+	<img class="smallStar"  src='<?=base_url()?>css/assets/<?php if($row->rating > 4){ echo "starOn.png"; } else { echo "starOff.png"; }?>'/>
+	<br/>
+				<?=$row->product_name?>
 			</div>
 
 		</span>
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/50035637.jpg"/>
-				<br/>
-				Wine Name 2<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-
-		</span>
-
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/50035637.jpg"/>
-				<br/>
-				Wine Name 3<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-
-		</span>
-
-	</div>
-	<div>
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/57303471.jpg"/>
-				<br/>
-				Wine Name 4<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-
-		</span>
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/52912414.jpg"/>
-				<br/>
-				Wine Name 5<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-
-		</span>
-
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/50747647.jpg"/>
-				<br/>
-				Wine Name 6<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-		</span>
-	</div>
-	<div>
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/50148008.jpg"/>
-				<br/>
-				Wine Name 7<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-
-		</span>
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/50035637.jpg"/>
-				<br/>
-				Wine Name 8<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-
-		</span>
-
-		<span id="wineContainer">
-
-			<div class="wineRack">
-				<img   src="<?=base_url() ?>images/wines/50035637.jpg"/>
-				<br/>
-				Wine Name 9<br/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOn.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-	<img class="smallStar"  src='<?=base_url()?>css/assets/starOff.png'/>
-			</div>
-	</span>
+	<?php if($count == 3) { echo "</div>"; $count = 0; } ?>
+	<?php endforeach;?>
 </div>

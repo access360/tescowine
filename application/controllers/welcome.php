@@ -22,6 +22,7 @@ class Welcome extends CI_Controller {
 
 	public function index() {
 		$this -> session -> unset_userdata('sessionID');
+		$data['recent_wine'] = $this->stand_model->get_recently_reviewed();
 		$data['mainContent'] = "content/frontpage";
 		$this -> load -> vars($data);
 		$this -> load -> view('templates/base');
