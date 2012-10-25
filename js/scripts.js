@@ -1,5 +1,6 @@
 var base_url = $('#baseurl').val();
 var starValue;
+var timeout = 150000;
 var tips = $( ".validateTips" );
 
 
@@ -42,6 +43,13 @@ var tips = $( ".validateTips" );
                 tips.removeClass( "ui-state-highlight", 1500 );
             }, 500 );
         }
+        
+        function logAction(action) {
+
+	    $.post(base_url + "forms/logAction", {
+	        action : action
+	    });
+}
 			
 /***********************************************/
 /*
@@ -51,6 +59,23 @@ var tips = $( ".validateTips" );
  **********************************************/
 
 $(document).ready(function() {
+	
+	
+        $(document).bind("idle.idleTimer", function(){
+            var timeoutCorrect = (timeout/1000);
+           logAction('No Activity for ' + timeoutCorrect + ' seconds');
+           // checktime();
+           //alert('timeout');
+           window.location = base_url;
+        });
+
+        $(document).bind("active.idleTimer", function(){
+            //user active again
+            });
+
+        $.idleTimer(timeout);
+	
+	
 	$(function(){
 			$('#keyboard').keyboard({
 				 autoAccept: 'true'
@@ -95,7 +120,7 @@ $(document).ready(function() {
 		$('#startButton').click(function() {
 
 		
-	 window.location = base_url + "welcome/stand_menu/";
+	 window.location = base_url + "index.php/welcome/stand_menu/";
 		
 		
 		
@@ -110,7 +135,7 @@ $(document).ready(function() {
 	
 	$('#continue').click(function(){
 			
-	 window.location = base_url + "welcome/stand_menu/";
+	 window.location = base_url + "index.php/welcome/stand_menu/";
 	});
 	
 	$('.wineRack').click(function() {
@@ -276,7 +301,7 @@ var LastReview = $("#lastReview")
 
 		var stand_id = $(this).attr('id');
 
-	 window.location = base_url + "welcome/display_stand/" + stand_id;
+	 window.location = base_url + "index.php/welcome/display_stand/" + stand_id;
 		
 		
 		
