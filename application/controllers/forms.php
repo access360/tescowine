@@ -22,8 +22,12 @@ class Forms extends CI_Controller {
 		$sessionID = $this->input->post('sessionID');
 		$output = $starValue." ".$wineID." ".$sessionID;
 		
+		
+		
+		
 		$this->forms_model->add_rating($starValue, $wineID, $sessionID);
-		echo $output;
+		$ratingID = mysql_insert_id();
+		echo $ratingID;
 		
 		
 	}
@@ -32,9 +36,12 @@ class Forms extends CI_Controller {
 		$email = $this->input->post('email');
 		$phone = $this->input->post('phone');
 		$sessionID = $this->input->post('sessionID');
+		$lastReview = $this->input->post('lastReview');
 		
 		$output  = "name:".$name." email:".$email." phone:".$phone." session:".$sessionID;
 		$this->forms_model->add_entry($name, $email, $phone, $sessionID);
+		$lastEntry = mysql_insert_id();
+		$this->forms_model->update_rating_link($lastReview, $lastEntry);
 		
 		echo $output;
 	}

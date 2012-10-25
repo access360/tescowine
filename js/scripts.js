@@ -121,7 +121,16 @@ $(document).ready(function() {
 		
 		$("#wine_" + wine_id).fadeIn();
 		
-		var currentValue = $("#wine_" + wine_id).find('#starValueInput').val();
+		var checkedValue = $("#wine_" + wine_id).find('#starValueInput').val();
+		var storedValue = $("#wine_" + wine_id).find('#starValueInputStored').val();
+		
+		if(checkedValue < 1) {
+			var currentValue = storedValue;
+		} else {
+			var currentValue = checkedValue;
+		}
+		
+		//alert(currentValue);
 		if(currentValue == 1)
 		{
 			$("#wine_" + wine_id).find('.oneStar').addClass("starchecked");
@@ -186,7 +195,8 @@ $(document).ready(function() {
 				
 				},
 		   function(data) {
-		     //alert("Data Loaded: " + data);
+		     var LastReview = data;
+		     $("#lastReview").val(LastReview);
 		   });
 		   
 		$(".popupBack").fadeOut();
@@ -218,6 +228,7 @@ var name = $('#keyboard');
 var phone = $('#keyboard3');
 var checked = $('#termsCheck');
 var SessionID = $('#sessionID');
+var LastReview = $("#lastReview")
  name.removeClass( "ui-state-error" );
  email.removeClass( "ui-state-error" );
 	var bValid = true;
@@ -231,7 +242,8 @@ var SessionID = $('#sessionID');
 				email: email.val(),
 				phone: phone.val(),
 				name: name.val(),
-				sessionID: SessionID.val()
+				sessionID: SessionID.val(),
+				lastReview: LastReview.val()
 				
 				},
 		   function(data) {

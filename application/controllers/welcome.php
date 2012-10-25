@@ -59,6 +59,9 @@ class Welcome extends CI_Controller {
 			$data['currentSession'] = $this -> session -> userdata('sessionID');
 		}
 		
+		//get user entry from current session
+		$data['entry'] = $this -> forms_model -> check_session_entry($data['currentSession']);
+		
 		//get reviews from current session
 		$data['reviews'] = $this -> stand_model -> get_reviews($stand_id, $data['currentSession']);
 		

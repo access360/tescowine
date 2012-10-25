@@ -40,12 +40,12 @@
 	<div class="star  fiveStar">
 		
 	</div>	
-	<?php foreach($reviews as $row2):?>
-		<?=$row2->product_name?>: <?=$row2->rating?><br/>
+	<?php if($reviews != NULL) { foreach($reviews as $row2):?>
+		
 		<?php if($row->product_ref == $row2->product_ref) {?>
-		<input type="text" id="starValueInputStored" name="starvalueStored" value="<?=$row2->rating?>"/>
+		<input type="hidden" id="starValueInputStored" name="starvalueStored" value="<?=$row2->rating?>"/>
 		<?php } ?>
-		<?php endforeach;?>
+		<?php endforeach; }?>
 	<input type="hidden" id="starValueInput" name="starvalue"/>
 	<input type="hidden" id="wineID" name="wineID" value="<?=$row->product_ref?>"/>
 	<input type="hidden" id="sessionID" name="sessionID" value="<?=$currentSession?>"/>
