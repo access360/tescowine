@@ -141,7 +141,7 @@ $(document).ready(function() {
 	$('.wineRack').click(function() {
 
 		var wine_id = $(this).attr('id');
-
+ logAction('View wine ID ' + wine_id);
 	
 		
 		$("#wine_" + wine_id).fadeIn();
