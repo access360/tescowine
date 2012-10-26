@@ -1,3 +1,12 @@
+<style type="text/css">
+	.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+border: 1px solid #AAA;
+background: #730055;
+font-weight: normal;
+color: #ffffff;
+}
+</style>
+
 <input type="hidden" id="lastReview"/>
 <div id="detailsForm" class="popupBack">
 	<div class="popup">
