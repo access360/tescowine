@@ -32,7 +32,7 @@ class Welcome extends CI_Controller {
 		//set session
 		$sessionID = $this -> session -> userdata('sessionID');
 		if ($sessionID == NULL) {
-			echo "no session";
+			//echo "no session";
 			$newdata = array('sessionID' => now());
 			$this -> session -> set_userdata($newdata);
 		} else {
@@ -53,7 +53,7 @@ class Welcome extends CI_Controller {
 		//TODO this is duplciated, make it a separate function
 		$sessionID = $this -> session -> userdata('sessionID');
 		if ($sessionID == NULL) {
-			echo "no session";
+			//echo "no session";
 			$newdata = array('sessionID' => now());
 			$this -> session -> set_userdata($newdata);
 		} else {

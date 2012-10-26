@@ -2,7 +2,7 @@
 	<div class="popup">
 		<div class="boxPadding">
 			<div class="closePopup"></div>
-			<h2>Terms and Conditions</h2>
+			<h2>Terms  <br/> &amp; Conditions</h2>
 			<ol style="padding-top:30px; padding-left:90px; padding-right:90px; font-size:18px; line-height:25px;" class="orderedlist">
 			<li>
 					The competition is open to all UK residents aged 18 or over, except for anyone directly connected with the planning or administration of the competition.
@@ -23,7 +23,7 @@
 					Ratings will be used on tesco.com/wine
 			</li>
 			<li>
-					The prize is a 6 bottle case of the entrant’s favourite wine tasted at the fair. There will be one prize draw for the whole London fair.
+					The prize is a 6 bottle case of the entrant’s favourite wine tasted at the fair (excludes fine wine). There will be one prize draw for the whole London fair.
 			</li>
 			<li>
 					All prizes are subject to availability. Where a product is no longer available an equivalent product of the same value will be substituted. There are no cash alternatives.
