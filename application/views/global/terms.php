@@ -23,7 +23,7 @@
 					Ratings will be used on tesco.com/wine
 			</li>
 			<li>
-					The prize is a 6 bottle case of the entrant’s favourite wine tasted at the fair. There will be one prize draw for the whole London fair.
+					The prize is a 6 bottle case of the entrant’s favourite wine tasted at the fair (excludes fine wine). There will be one prize draw for the whole London fair.
 			</li>
 			<li>
 					All prizes are subject to availability. Where a product is no longer available an equivalent product of the same value will be substituted. There are no cash alternatives.
