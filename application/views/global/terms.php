@@ -2,7 +2,7 @@
 	<div class="popup">
 		<div class="boxPadding">
 			<div class="closePopup"></div>
-			<h2>Terms and Conditions</h2>
+			<h2>Terms  <br/> &amp; Conditions</h2>
 			<ol style="padding-top:30px; padding-left:90px; padding-right:90px; font-size:18px; line-height:25px;" class="orderedlist">
 			<li>
 					The competition is open to all UK residents aged 18 or over, except for anyone directly connected with the planning or administration of the competition.
