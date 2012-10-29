@@ -54,11 +54,11 @@ public function reviews() {
 		echo $row->name.";";
 		echo $row->email.";";
 		echo $row->phone.";";
-		echo $row->name.";";
+	
 		echo $row->product_name.";";
 		echo $row->product_ref.";";
 		echo $row->rating.";";
-		echo $row->session_id."<br/>";
+		echo unix_to_human($row->session_id)."<br/>";
 	endforeach;
 }
 
