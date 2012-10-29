@@ -46,6 +46,22 @@ class Welcome extends CI_Controller {
 		$this -> load -> vars($data);
 		$this -> load -> view('templates/base');
 	}
+public function reviews() {
+	
+	$reviewData = $this->stand_model->get_all_entries();
+	foreach($reviewData as $row):
+		
+		echo $row->name.",";
+		echo $row->email.",";
+		echo $row->phone.",";
+		echo $row->name.",";
+		echo $row->product_name.",";
+		echo $row->product_ref.",";
+		echo $row->rating.",";
+		echo $row->session_id."<br/>";
+	endforeach;
+}
+
 
 	public function display_stand($stand_id) {
 
