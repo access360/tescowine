@@ -40,6 +40,18 @@ class Stand_model extends CI_Model {
 		}
 
 	}
+	
+function get_all_entries() {
+
+$this->db->join('ratings', 'ratings.entryID = entries.entryID');
+$this->db->join('wines', 'wines.product_ref = ratings.wine_ref');
+$query = $this->db->get('entries');
+if ($query -> num_rows > 0) {
+			return $query -> result();
+		} else {
+			return false;
+		}
+}
 
 	function check_wineID_exists($product_ref) {
 		$this -> db -> where('product_ref', $product_ref);
